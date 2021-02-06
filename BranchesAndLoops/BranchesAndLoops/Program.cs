@@ -62,6 +62,21 @@ namespace BranchesAndLoops
             }
         }
 
+        static int sumOfTwentyIntegersDivisibleBy3()
+        {
+            int sum = 0;
+
+            for (int i = 1; i < 20; i++)
+            {
+                if (i % 3 == 0) // if the iterator  value is divisible by 3
+                {
+                    sum += i;
+                }
+            }
+
+            return sum;
+        }
+
 
         static void Main(string[] args)
         {
@@ -105,6 +120,7 @@ namespace BranchesAndLoops
                 }
             }
 
+            Console.WriteLine(sumOfTwentyIntegersDivisibleBy3());
         }
     }
 }
