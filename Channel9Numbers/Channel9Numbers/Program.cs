@@ -123,6 +123,12 @@ namespace Channel9Numbers
 
             // The M suffix on the numbers is how you indicate that a constant should use the decimal type. Otherwise,
             // the compiler assumes the double type.
+
+
+            double radiusOfCircle = 2.50;
+            double areaOfCircle = Math.PI * Math.Pow(radiusOfCircle, 2);
+            Console.WriteLine(areaOfCircle); // 19.63....
+
         }
 
     }
