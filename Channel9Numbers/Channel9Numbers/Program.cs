@@ -61,22 +61,22 @@ namespace Channel9Numbers
             WorkingWithIntegers();
             OrderPrecedence();
 
-            int a = 7;
-            int b = 4;
-            int c = 3;
-            int d = (a + b) / c;
-            int e = (a + b) % c;
-            Console.WriteLine($"quotient: {d}");
-            Console.WriteLine($"remainder: {e}");
+            //int a = 7;
+            //int b = 4;
+            //int c = 3;
+            //int d = (a + b) / c;
+            //int e = (a + b) % c;
+            //Console.WriteLine($"quotient: {d}");
+            //Console.WriteLine($"remainder: {e}");
 
-            // If a calculation produces a value that exceeds those limits, you have an underflow or overflow condition.
-            // The answer appears to wrap from one limit to the other. 
-            int max = int.MaxValue;
-            int min = int.MinValue;
-            Console.WriteLine($"The range of integers is {min} to {max}");
+            //// If a calculation produces a value that exceeds those limits, you have an underflow or overflow condition.
+            //// The answer appears to wrap from one limit to the other. 
+            //int max = int.MaxValue;
+            //int min = int.MinValue;
+            //Console.WriteLine($"The range of integers is {min} to {max}");
 
-            int what = max + 3;
-            Console.WriteLine($"An example of overflow: {what}");
+            //int what = max + 3;
+            //Console.WriteLine($"An example of overflow: {what}");
 
             /*
              * Notice that the answer is very close to the minimum (negative) integer. It's the same as min + 2. The addition operation overflowed the allowed values for integers. The answer is a very large negative number because an overflow "wraps around" from the largest possible integer value to the smallest.
@@ -87,6 +87,26 @@ namespace Channel9Numbers
              * 
              * 
              */
+
+            /*
+             * The range of a double value is much greater than integer values.
+             * Try the following code below what you've written so far.
+             */
+
+            double e = 19;
+            double f = 23;
+            double g = 8;
+            double h = (e + f) / g;
+            Console.WriteLine(h); // 5.25
+
+            // doubles are printed in scientific notation when very large
+            double max = double.MaxValue;
+            double min = double.MinValue;
+            Console.WriteLine($"The range of double is {min} to {max}");
+
+            // rounding error - this isn't 1/3
+            double third = 1.0 / 3.0;
+            Console.WriteLine(third); // 0.333...
         }
 
     }
