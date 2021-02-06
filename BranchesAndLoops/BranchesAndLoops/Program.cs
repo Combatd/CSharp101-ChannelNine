@@ -4,7 +4,7 @@ namespace BranchesAndLoops
 {
     class Program
     {
-        static void Main(string[] args)
+        static void ExploreIf()
         {
             //int a = 5;
             //int b = 6;
@@ -60,7 +60,13 @@ namespace BranchesAndLoops
                 Console.WriteLine("The answer is not greater than 10");
                 Console.WriteLine("And the first number is not equal to the second");
             }
+        }
 
+
+        static void Main(string[] args)
+        {
+
+            //ExploreIf();
         }
     }
 }
