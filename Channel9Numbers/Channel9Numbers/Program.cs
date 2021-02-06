@@ -93,20 +93,36 @@ namespace Channel9Numbers
              * Try the following code below what you've written so far.
              */
 
-            double e = 19;
-            double f = 23;
-            double g = 8;
-            double h = (e + f) / g;
-            Console.WriteLine(h); // 5.25
+            //double e = 19;
+            //double f = 23;
+            //double g = 8;
+            //double h = (e + f) / g;
+            //Console.WriteLine(h); // 5.25
 
             // doubles are printed in scientific notation when very large
-            double max = double.MaxValue;
-            double min = double.MinValue;
-            Console.WriteLine($"The range of double is {min} to {max}");
+            //double max = double.MaxValue;
+            //double min = double.MinValue;
+            //Console.WriteLine($"The range of double is {min} to {max}");
 
             // rounding error - this isn't 1/3
-            double third = 1.0 / 3.0;
-            Console.WriteLine(third); // 0.333...
+            //double third = 1.0 / 3.0;
+            //Console.WriteLine(third); // 0.333...
+
+            // decimal type has a smaller range but greater precision than double
+            decimal min = decimal.MinValue;
+            decimal max = decimal.MaxValue;
+            Console.WriteLine($"The range of the decimal type is {min} to {max}");
+
+            double a = 1.0;
+            double b = 3.0;
+            Console.WriteLine(a / b);
+
+            decimal c = 1.0M;
+            decimal d = 3.0M;
+            Console.WriteLine(c / d);
+
+            // The M suffix on the numbers is how you indicate that a constant should use the decimal type. Otherwise,
+            // the compiler assumes the double type.
         }
 
     }
