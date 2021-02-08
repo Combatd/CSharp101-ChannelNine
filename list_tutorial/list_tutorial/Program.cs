@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace list_tutorial
 {
@@ -6,7 +7,11 @@ namespace list_tutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var names = new List<string> { "<name>", "Ana", "Felipe" };
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToUpper()}!");
+            }
         }
     }
 }
