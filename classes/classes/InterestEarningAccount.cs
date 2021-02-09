@@ -10,7 +10,8 @@ namespace classes
     // inherits from BankAccount
     public class InterestEarningAccount : BankAccount
     {
-        // constructor
+        // You use the : base() syntax to indicate a call to a base class constructor.
+        // Some classes define multiple constructors, and this syntax enables you to pick which base class constructor you call.
         public InterestEarningAccount(string name, decimal initialBalance) : base(name, initialBalance)
         {
 

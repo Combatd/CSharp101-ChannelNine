@@ -86,5 +86,21 @@ namespace classes
             allTransactions.Add(withdrawal);
         }
 
+        /*
+         * A virtual method is a method where any derived class may choose to reimplement. 
+         * The derived classes use the override keyword to define the new implementation. 
+         * Typically you refer to this as "overriding the base class implementation". 
+         * The virtual keyword specifies that derived classes may override the behavior. 
+         * 
+         * You can also declare abstract methods where derived classes must override the behavior. 
+         * The base class does not provide an implementation for an abstract method. 
+         * Next, you need to define the implementation for two of the new classes you've created. 
+         * Start with the InterestEarningAccount:
+         */
+
+        public virtual void PerformMonthEndTransactions() {
+
+        }
+
     }
 }
