@@ -12,7 +12,20 @@ namespace classes
 
         public string Number { get; }
         public string Owner { get; set; }
-        public decimal Balance { get; }
+
+        // computation enumerates all transactions, and provides the sum as the current balance.
+        public decimal Balance {
+            get
+            {
+                decimal balance = 0;
+                foreach (var item in allTransactions)
+                {
+                    balance += item.Amount;
+                }
+
+                return balance;
+            }
+        }
 
         // constructor method
         // A constructor is a member that has the same name as the class. It is used to initialize objects of that class type.
