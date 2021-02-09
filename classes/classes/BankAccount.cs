@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace classes
 {
@@ -22,6 +23,8 @@ namespace classes
             this.Number = accountNumberSeed.ToString();
             accountNumberSeed++;
         }
+
+        private List<Transaction> allTransactions = new List<Transaction>();
 
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
