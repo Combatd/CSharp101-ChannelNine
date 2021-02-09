@@ -7,6 +7,11 @@ namespace list_tutorial
     {
         static void Main(string[] args)
         {
+            WorkingWithStrings();
+        }
+
+        static void WorkingWithStrings()
+        {
             var names = new List<string> { "Mark", "Ana", "Felipe" };
             foreach (var name in names)
             {
