@@ -44,13 +44,28 @@ namespace classes
 
         // constructor method
         // A constructor is a member that has the same name as the class. It is used to initialize objects of that class type.
-        public BankAccount(string name, decimal initialBalance)
+
+        /*
+         * Let's start by adding a second constructor that includes an optional minimumBalance parameter. 
+         * This new constructor does all the actions done by the existing constructor. 
+         * Also, it sets the minimum balance property. 
+         * You could copy the body of the existing constructor. but that means two locations to change in the future. 
+         * Instead, you can use constructor chaining to have one constructor call another. 
+         *
+         */
+        private readonly decimal minimumBalance;
+
+        public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+
+        public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
         {
             this.Number = accountNumberSeed.ToString();
             accountNumberSeed++;
 
             this.Owner = name;
-            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            this.minimumBalance = minimumBalance;
+            if (initialBalance > 0)
+                MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
         }
 
         private List<Transaction> allTransactions = new List<Transaction>();
