@@ -100,6 +100,14 @@ namespace classes
                 allTransactions.Add(overdraftTransaction);
         }
 
+        /*
+         * The added method is protected, which means that it can be called only from derived classes. 
+         * That declaration prevents other clients from calling the method. 
+         * It's also virtual so that derived classes can change the behavior. 
+         * The return type is a Transaction?. 
+         * The ? annotation indicates that the method may return null.
+         */
+
         protected virtual Transaction? CheckWithdrawalLimit(bool isOverdrawn)
         {
             if (isOverdrawn)
