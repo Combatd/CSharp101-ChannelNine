@@ -5,6 +5,8 @@ namespace classes
     public class BankAccount
     {
         // hidden encapsulated data
+        // private, which means it can only be accessed by code inside the BankAccount class
+        // static, which means it is shared by all of the BankAccount objects
         private static int accountNumberSeed = 1234567890;
 
         public string Number { get; }
