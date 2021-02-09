@@ -7,7 +7,7 @@ namespace list_tutorial
     {
         static void Main(string[] args)
         {
-            var names = new List<string> { "<name>", "Ana", "Felipe" };
+            var names = new List<string> { "Mark", "Ana", "Felipe" };
             foreach (var name in names)
             {
                 Console.WriteLine($"Hello {name.ToUpper()}!");
