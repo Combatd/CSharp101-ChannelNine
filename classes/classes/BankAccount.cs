@@ -31,20 +31,45 @@ namespace classes
         // A constructor is a member that has the same name as the class. It is used to initialize objects of that class type.
         public BankAccount(string name, decimal initialBalance)
         {
-            this.Owner = name;
-            this.Balance = initialBalance;
             this.Number = accountNumberSeed.ToString();
             accountNumberSeed++;
+
+            this.Owner = name;
+            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
         }
 
         private List<Transaction> allTransactions = new List<Transaction>();
 
+        /*
+         * The standard way of indicating that a method cannot complete its work successfully is to throw an exception. 
+         * The type of exception and the message associated with it describe the error. Here, the MakeDeposit method throws an exception if the amount of the deposit is negative. 
+         * The MakeWithdrawal method throws an exception if the withdrawal amount is negative, 
+         * or if applying the withdrawal results in a negative balance.
+         */
+
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
+            }
+            var deposit = new Transaction(amount, date, note);
+            allTransactions.Add(deposit);
         }
 
         public void MakeWithdrawal(decimal amount, DateTime date, string note)
         {
+            if (amount <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
+            }
+            if (Balance - amount < 0)
+            {
+                throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+            }
+            var withdrawal = new Transaction(-amount, date, note);
+            allTransactions.Add(withdrawal);
         }
+
     }
 }
