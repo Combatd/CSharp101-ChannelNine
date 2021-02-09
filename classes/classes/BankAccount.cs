@@ -13,6 +13,21 @@ namespace classes
         public string Number { get; }
         public string Owner { get; set; }
 
+        public string GetAccountHistory()
+        {
+            var report = new System.Text.StringBuilder();
+
+            decimal balance = 0;
+            report.AppendLine("Date\t\tAmount\tBalance\tNote");
+            foreach (var item in allTransactions)
+            {
+                balance += item.Amount;
+                report.AppendLine($"{item.Date.ToShortDateString()}\t{item.Amount}\t{balance}\t{item.Notes}");
+            }
+
+            return report.ToString();
+        }
+
         // computation enumerates all transactions, and provides the sum as the current balance.
         public decimal Balance {
             get
